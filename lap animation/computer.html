@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laptop</title>
+	<style>
+		body{
+			background-image:url("room2.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.back{
+			width:670px;
+			height:410px;
+			position: relative;
+			top: 110px;
+			left: 26%;
+			background: black;
+			background-image: url("apple.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			box-shadow: inset 5px 5px 5px white,inset -5px -5px 5px white;
+			transform-origin: bottom;
+			transform: rotateX(0deg);
+			transition: 5s;
+			z-index: 1;
+		}
+		.front{
+			width: 650px;
+			height: 350px;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			background: black;
+			backface-visibility: hidden;
+		}
+		.back:hover{
+			transform-origin: bottom;
+			transform-style: preserve-3d;
+			transform: perspective(1100px) rotateX(-96deg);
+			transition: 5s;
+		}
+		.keyboard{
+			width: 1000px;
+			height: 100px;
+			background: black;
+			position: absolute;
+			top: 65%;
+			left: 15%;
+			border-bottom: 1px solid white;
+			transform-origin: bottom;
+			transform-style: preserve-3d;
+			transform: perspective(100px) rotateX(30deg);
+		}
+		.keyboard:before{
+			content: '';
+			position: absolute;
+		}
+		.keyboard:after{
+			content: '';
+			position: absolute;
+			transform-origin: top;
+			width: 100%;
+			height: 30px;
+			bottom: -30px;
+			background: black;
+			transform: perspective(2000px) rotateX(-30deg);
+		}
+		.keyboard:hover{
+			background: red;
+		}
+		.keyboard:hover:after{
+			background: linear-gradient(90deg,blue,skyblue,blue);
+		}
+		img{
+			position: absolute;
+			left: 25px;
+			top: 10px;
+			bottom: 10px;
+			width: 950px;
+			height: 80px;
+
+		}
+		.display{
+			position: absolute;
+			width: 600px;
+			height: 300px;
+			top: 5%;
+			left: 4%;
+			box-shadow: inset -5px -5px 8px white,5px, 5px, 8px white;
+		}
+	</style>
+</head>
+<body>
+	<div class="back">
+		<div class="front">
+			<div class="display"></div>
+		</div>
+	</div>
+	<div class="keyboard">
+		<img src="key.jpg">
+	</div>
+</body>
+</html>
